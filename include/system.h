@@ -7,6 +7,8 @@
 #include "process.h"
 #include "processor.h"
 
+#include "linux_parser.h"
+
 class System {
  public:
   Processor& Cpu();                   // TODO: See src/system.cpp
