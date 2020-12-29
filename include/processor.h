@@ -10,8 +10,8 @@ class Processor {
 
   // TODO: Declare any necessary private members
  private:
- float prev_active_{0.0};
- float prev_total_{0.0};
+ long prev_active_{0};
+ long prev_total_{0};
 };
 
 #endif
