@@ -24,7 +24,8 @@ float Processor::Utilization()
     prev_total_ = current_total;
     prev_active_ = current_active;
     
-    utilization = (float)(d_active) / (float)d_total;
+    utilization = static_cast<float>(d_active)
+                / static_cast<float>(d_total);
     
     return utilization;
 

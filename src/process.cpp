@@ -40,7 +40,8 @@ float Process::CpuUtilization() {
     prev_uptime_ = current_uptime;
 
     if (d_uptime != 0) {
-        cpu_utilization_ = ((float)d_active / sysconf(_SC_CLK_TCK)) / (float)d_uptime;
+        cpu_utilization_ = (static_cast<float>(d_active) / sysconf(_SC_CLK_TCK))
+                         / static_cast<float>(d_uptime);
     }
     
     return cpu_utilization_;

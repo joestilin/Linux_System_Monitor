@@ -10,10 +10,7 @@
 //#include "processor.h"
 #include "system.h"
 
-using std::set;
-using std::size_t;
-using std::string;
-using std::vector;
+using namespace std;
 
 // Return the system's CPU
 Processor& System::Cpu() { return cpu_; }
@@ -60,7 +57,7 @@ vector<Process>& System::Processes() {
         processes_.emplace_back(proc);
     }
     // erase newly killed processes from the processes_ vector
-    for (u_int i; i < processes_.size(); i++) {
+    for (u_int i = 0; i < processes_.size(); i++) {
         for (int pid : deleted_pids) {
             if (processes_[i].Pid() == pid) {
                 processes_.erase(processes_.begin() + i);
